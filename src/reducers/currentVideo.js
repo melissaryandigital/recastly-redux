@@ -5,3 +5,7 @@ var currentVideoReducer = (state, action) => {
 };
 
 export default currentVideoReducer;
+
+
+
+// I'm guessing we would use spread operator to create a copy and overwrite values of state
