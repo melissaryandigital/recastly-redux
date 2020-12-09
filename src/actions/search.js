@@ -9,7 +9,6 @@ var handleVideoSearch = (q) => {
   //TODO:  Write an asynchronous action to handle a video search!
 
 
-
   return (dispatch) => {
 
 
