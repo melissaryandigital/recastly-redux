@@ -1,11 +1,29 @@
 import { connect } from 'react-redux';
 import Search from './../components/Search.js';
-import handleSearchChange from '../actions/search.js';
+import handleVideoSearch from '../actions/search.js';
 
 
-var SearchContainer = () => {
+//methods we're missing:
+// not using handleVideoSearch
+// not using mapStateToProps
+// not using mapDispatchToProps
+// not using dispatch?
 
-};
+// mapStateToProps
+var mapStateToProps = (state) => ({
+  currentVideo: state.currentVideo,
+  videoList: state.videoList
+})
+
+// mapDispatchToProps
+var mapDispatchToProps = (dispatch) => {
+  // handleVideoSearch:
+  return {};
+  // return an object
+}
+
+
+var SearchContainer = connect(mapStateToProps, mapDispatchToProps)(Search);
 
 //TODO: define a SearchContainer component which will hook up your action
 // dispatchers with your search component props.
@@ -13,9 +31,6 @@ var SearchContainer = () => {
 //state and dispatch mappings.
 
 export default SearchContainer;
-
-
-// Melissa note - it imports handleSearchChange but our action is exported as 'handleVideoSearch'
 
 
 // From containers spec
