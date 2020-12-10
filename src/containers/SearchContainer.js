@@ -3,22 +3,16 @@ import Search from './../components/Search.js';
 import handleVideoSearch from '../actions/search.js';
 
 
-//methods we're missing:
-// not using handleVideoSearch
-// not using mapStateToProps
-// not using mapDispatchToProps
-// not using dispatch?
-
-// mapStateToProps
-var mapStateToProps = (state) => ({
+var mapStateToProps = state => ({
   currentVideo: state.currentVideo,
   videoList: state.videoList
 })
 
-// mapDispatchToProps
 var mapDispatchToProps = (dispatch) => {
   // handleVideoSearch:
-  return {};
+  return ({
+    handleSearchInputChange: () => {dispatch(handleVideoSearch)}
+  })
   // return an object
 }
 
