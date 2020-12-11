@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
-import Search from './../components/Search.js';
+
+import Search from '../components/Search.js';
 import handleVideoSearch from '../actions/search.js';
 
 
@@ -9,13 +10,10 @@ var mapStateToProps = state => ({
 })
 
 var mapDispatchToProps = (dispatch) => {
-  // handleVideoSearch:
   return ({
-    handleSearchInputChange: () => {dispatch(handleVideoSearch)}
+    handleSearchInputChange: (q) => {dispatch(handleVideoSearch(q))}
   })
-  // return an object
 }
-
 
 var SearchContainer = connect(mapStateToProps, mapDispatchToProps)(Search);
 
@@ -25,24 +23,3 @@ var SearchContainer = connect(mapStateToProps, mapDispatchToProps)(Search);
 //state and dispatch mappings.
 
 export default SearchContainer;
-
-
-// From containers spec
-
-// describe('containers', function() {
-//   describe('Search Container', function() {
-//     before(function () {
-//       sinon.spy(store, 'dispatch');
-//       component = shallowWithStore(<SearchContainer />, store);
-//     });
-//     beforeEach(function() {
-//       store.dispatch.reset();
-//     });
-//     it('should have a prop called handleSearchInputChange which dispatches handleVideoSearch', function() {
-//       component.props().handleSearchInputChange('kitten mittens');
-//       expect(component.props().handleSearchInputChange).to.be.a('function');
-//       expect(store.dispatch.callCount).to.equal(1);
-//     });
-//     it('should be created using the React-Redux connect method', function() {
-//       expect(SearchContainer.name).to.equal('Connect');
-//     });
