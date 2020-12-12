@@ -3,6 +3,8 @@ import changeVideoList from './videoList.js';
 import changeVideo from './currentVideo.js';
 import YOUTUBE_API_KEY from '../config/youtube.js';
 
+var debouncedSearch = _.debounce(searchYouTube, 500);
+
 
 var handleVideoSearch = (q) => {
 
@@ -21,7 +23,7 @@ var handleVideoSearch = (q) => {
       dispatch(changeVideo(data[0]));
     }
 
-    searchYouTube(options, done);
+    debouncedSearch(options, done);
   }
 }
 
